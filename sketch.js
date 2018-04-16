@@ -51,7 +51,7 @@ let assignFill = (grid, i, j) => {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  let canvas = createCanvas(windowWidth, windowHeight);
   cols = floor(windowWidth / resolution);
   rows = floor(windowHeight / resolution);
   grid = make2DArray(cols, rows);
