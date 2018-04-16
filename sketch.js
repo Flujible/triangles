@@ -1,7 +1,7 @@
-let resolution = 7;
+let resolution = 10;
 let cols, rows;
 let r, g, b;
-let opacity = 255;
+let opacity = 30;
 
 let make2DArray = (cols, rows) => {
   let arr = new Array(cols);
@@ -55,9 +55,9 @@ function setup() {
   cols = floor(windowWidth / resolution);
   rows = floor(windowHeight / resolution);
   grid = make2DArray(cols, rows);
-  r = random(0, 100);
-  g = random(0, 100);
-  b = random(0, 100);
+  r = random(0, 200);
+  g = random(0, 200);
+  b = random(0, 200);
   strokeWeight(0);
   for (let j = 0; j < rows; j++) {
     for (let i = 0; i < cols; i++) {
