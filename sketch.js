@@ -1,7 +1,7 @@
-let resolution = 10;
+let resolution = 5;
 let cols, rows;
 let r, g, b;
-let opacity = 30;
+let opacity = 50;
 
 let make2DArray = (cols, rows) => {
   let arr = new Array(cols);
@@ -52,12 +52,13 @@ let assignFill = (grid, i, j) => {
 
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
+	canvas.parent("canvas");
   cols = floor(windowWidth / resolution);
   rows = floor(windowHeight / resolution);
   grid = make2DArray(cols, rows);
-  r = random(0, 200);
-  g = random(0, 200);
-  b = random(0, 200);
+  r = random(100, 250);
+  g = random(100, 250);
+  b = random(100, 250);
   strokeWeight(0);
   for (let j = 0; j < rows; j++) {
     for (let i = 0; i < cols; i++) {
@@ -69,7 +70,7 @@ function setup() {
 
 function draw() {
   clear();
-  background(240);
+  background(250);
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
       let xPosition = i * resolution;
@@ -80,4 +81,8 @@ function draw() {
       }
     }
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
