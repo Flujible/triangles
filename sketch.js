@@ -55,6 +55,7 @@ function setup() {
 	canvas.parent("canvas");
   cols = floor(windowWidth / resolution);
   rows = floor(windowHeight / resolution);
+  console.log("Cols flanking content: " + ceil(cols / 6));
   grid = make2DArray(cols, rows);
   r = random(100, 250);
   g = random(100, 250);
