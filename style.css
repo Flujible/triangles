@@ -11,15 +11,34 @@ body {
 	font-family: 'Noto Sans', sans-serif;
 }
 
+h1 {
+	position: absolute;
+	top: 0;
+	left: 20px;
+}
+
 p {
 	margin: 5px 0;
 }
 
 #canvas {
 	position: fixed;
-	top:0;
-	left:0;
-	z-index:-1;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.srt {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
 }
 
 .input-container {
@@ -37,4 +56,3 @@ p {
 .input-container p, .input-container label {
 	background-color: rgb(250, 250, 250);
 }
-
