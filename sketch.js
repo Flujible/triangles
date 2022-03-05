@@ -16,7 +16,6 @@ let updateValue = () => {
 let resolution = 10;
 let cols, rows;
 let r, g, b;
-let opacity = 50;
 
 let make2DArray = (cols, rows) => {
   let arr = new Array(cols);
@@ -75,9 +74,9 @@ createGrid = () => {
   cols = floor(windowWidth / resolution);
   rows = floor(windowHeight / resolution);
   grid = make2DArray(cols, rows);
-  r = random(100, 255);
-  g = random(100, 200);
-  b = random(100, 255);
+  r = random(50, 220);
+  g = random(50, 225);
+  b = random(50, 225);
   strokeWeight(0);
   for (let j = 0; j < rows; j++) {
     for (let i = 0; i < cols; i++) {
@@ -92,7 +91,7 @@ const createTriangles = () => {
       let xPosition = i * resolution;
       let yPosition = j * resolution;
       if(grid[i][j]) {
-        fill(r, g, b, opacity);
+        fill(r, g, b);
         rect(xPosition, yPosition, resolution , resolution );
       }
     }
