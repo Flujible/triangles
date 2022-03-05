@@ -1,4 +1,4 @@
-let resolution = 5;
+let resolution = 10;
 let cols, rows;
 let r, g, b;
 let opacity = 50;
@@ -55,7 +55,6 @@ function setup() {
 	canvas.parent("canvas");
   cols = floor(windowWidth / resolution);
   rows = floor(windowHeight / resolution);
-  console.log("Cols flanking content: " + ceil(cols / 6));
   grid = make2DArray(cols, rows);
   r = random(100, 250);
   g = random(100, 250);
