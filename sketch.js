@@ -1,3 +1,18 @@
+let sliderValue = 10;
+let inputSliderElem;
+let inputValueElem;
+window.onload = () => {
+  inputSliderElem = document.getElementById('resolution');
+  inputValueElem = document.getElementById('resolution-value');
+  inputValueElem.innerText = inputSliderElem.value;
+};
+
+let updateValue = () => {
+  inputValueElem.innerText = inputSliderElem.value;
+  sliderValue = inputSliderElem.value;
+  redraw();
+};
+
 let resolution = 10;
 let cols, rows;
 let r, g, b;
@@ -53,6 +68,10 @@ let assignFill = (grid, i, j) => {
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
 	canvas.parent("canvas");
+  createGrid();
+}
+
+createGrid = () => {
   cols = floor(windowWidth / resolution);
   rows = floor(windowHeight / resolution);
   grid = make2DArray(cols, rows);
@@ -67,10 +86,7 @@ function setup() {
   }
 }
 
-
-function draw() {
-  clear();
-  background(250);
+const createTriangles = () => {
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
       let xPosition = i * resolution;
@@ -81,6 +97,15 @@ function draw() {
       }
     }
   }
+}
+
+function draw() {
+  clear();
+  resolution = sliderValue;
+  background(250);
+  createGrid();
+  createTriangles();
+  noLoop();
 }
 
 function windowResized() {
