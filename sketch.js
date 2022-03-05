@@ -1,14 +1,14 @@
 let sliderValue = 10;
 let inputSliderElem;
-let inputValueElem;
+let inputLabelElem;
 window.onload = () => {
   inputSliderElem = document.getElementById('resolution');
-  inputValueElem = document.getElementById('resolution-value');
-  inputValueElem.innerText = inputSliderElem.value;
+  inputLabelElem = document.getElementById('resolution-label');
+  inputLabelElem.innerText = "Resolution: " + inputSliderElem.value;
 };
 
 let updateValue = () => {
-  inputValueElem.innerText = inputSliderElem.value;
+  inputLabelElem.innerText = "Resolution: " + inputSliderElem.value;
   sliderValue = inputSliderElem.value;
   redraw();
 };
